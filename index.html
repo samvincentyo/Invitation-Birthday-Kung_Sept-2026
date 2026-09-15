@@ -285,42 +285,7 @@
 
     <!-- ==================== HALAMAN 2: EVENT DETAILS & COUNTDOWN ==================== -->
     <section id="page-2" class="px-5 py-12 z-20 relative min-h-screen flex flex-col justify-center items-center">
-
-<!-- LAMPION MERAH GANTUNG (KIRI ATAS) -->
-      <div class="absolute top-0 left-2 w-20 h-44 lantern-sway z-30 pointer-events-none">
-        <svg viewBox="0 0 100 200" class="w-full h-full drop-shadow-xl">
-          <line x1="50" y1="0" x2="50" y2="35" stroke="#FFD700" stroke-width="2.5"/>
-          <rect x="35" y="35" width="30" height="9" rx="2" fill="#D4AF37"/>
-          <ellipse cx="50" cy="85" rx="38" ry="42" fill="url(#lanternGradMain)"/>
-          <ellipse cx="50" cy="85" rx="20" ry="42" fill="none" stroke="#FF8080" stroke-width="1" opacity="0.4"/>
-          <text x="50" y="93" font-family="'Noto Serif SC'" font-size="24" font-weight="900" fill="#FFD700" text-anchor="middle" filter="drop-shadow(0 1px 2px rgba(0,0,0,0.5))">壽</text>
-          <rect x="35" y="127" width="30" height="9" rx="2" fill="#D4AF37"/>
-          <circle cx="50" cy="138" r="5" fill="#B80F0F" stroke="#D4AF37" stroke-width="1"/>
-          <path d="M42 142 L42 190 M50 142 L50 200 M58 142 L58 190" stroke="#FFD700" stroke-width="2.5"/>
-          <defs>
-            <radialGradient id="lanternGradMain" cx="40%" cy="35%" r="65%">
-              <stop offset="0%" stop-color="#FF3333"/>
-              <stop offset="60%" stop-color="#C40C0C"/>
-              <stop offset="100%" stop-color="#4A0000"/>
-            </radialGradient>
-          </defs>
-        </svg>
-      </div>
-
-      <!-- LAMPION MERAH GANTUNG (KANAN ATAS) -->
-      <div class="absolute top-0 right-2 w-20 h-44 lantern-sway z-30 pointer-events-none">
-        <svg viewBox="0 0 100 200" class="w-full h-full drop-shadow-xl">
-          <line x1="50" y1="0" x2="50" y2="35" stroke="#FFD700" stroke-width="2.5"/>
-          <rect x="35" y="35" width="30" height="9" rx="2" fill="#D4AF37"/>
-          <ellipse cx="50" cy="85" rx="38" ry="42" fill="url(#lanternGradMain)"/>
-          <ellipse cx="50" cy="85" rx="20" ry="42" fill="none" stroke="#FF8080" stroke-width="1" opacity="0.4"/>
-          <text x="50" y="93" font-family="'Noto Serif SC'" font-size="24" font-weight="900" fill="#FFD700" text-anchor="middle" filter="drop-shadow(0 1px 2px rgba(0,0,0,0.5))">壽</text>
-          <rect x="35" y="127" width="30" height="9" rx="2" fill="#D4AF37"/>
-          <circle cx="50" cy="138" r="5" fill="#B80F0F" stroke="#D4AF37" stroke-width="1"/>
-          <path d="M42 142 L42 190 M50 142 L50 200 M58 142 L58 190" stroke="#FFD700" stroke-width="2.5"/>
-        </svg>
-      </div>
-      
+    
       <div class="parchment-card rounded-xl p-5 text-center w-full">
         
         <p class="font-cinzel text-xs text-gold-700 font-bold uppercase tracking-widest">Waktu & Tempat Acara:</p>
@@ -446,7 +411,7 @@
         if (page2) {
           page2.scrollIntoView({ behavior: 'smooth' });
         }
-      }, 8000);
+      }, 5000);
 
       resizeCanvas();
     });
