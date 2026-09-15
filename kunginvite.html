@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perayaan Ulang Tahun Kung-Kung ke-91</title>
+
+  <!-- Google Fonts: Cinzel, Noto Serif SC, Great Vibes, Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Great+Vibes&family=Noto+Serif+SC:wght@600;700;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            gold: {
+              100: '#FFF8E7',
+              200: '#F5E3B3',
+              300: '#E8CA7F',
+              400: '#D4AF37',
+              500: '#C59B27',
+              600: '#A67C1E',
+              700: '#85580C',
+              800: '#5F3D05',
+            },
+            oriental: {
+              red: '#B80F0F',
+              darkred: '#7A0505',
+              crimson: '#D32F2F',
+              ivory: '#FAF4E8',
+              warmgold: '#FDF6E2',
+              ruby: '#9B0A0A',
+            }
+          },
+          fontFamily: {
+            oriental: ['"Noto Serif SC"', 'serif'],
+            cinzel: ['"Cinzel"', 'serif'],
+            script: ['"Great Vibes"', 'cursive'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #080503;
+      color: #2D1A04;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Container utama serasa aplikasi seluler / kartu elegan */
+    .app-container {
+      width: 100%;
+      max-width: 480px;
+      min-height: 100vh;
+      background: radial-gradient(circle at 50% 30%, #FFFDF5 0%, #F7E7C4 35%, #E5C370 65%, #B8860B 90%, #5F3D05 100%);
+      position: relative;
+      box-shadow: 0 0 50px rgba(0, 0, 0, 0.85);
+      overflow-y: auto;
+      overflow-x: hidden;
+      border-left: 3px solid #85580C;
+      border-right: 3px solid #85580C;
+    }
+
+    /* Canvas Glitter Melayang */
+    #glitter-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1000;
+    }
+
+    /* Text Metallic Gold Effect with standard and webkit background-clip */
+    .text-gold-gradient {
+      background: linear-gradient(180deg, #FFE89C 0%, #F1C40F 35%, #B8860B 70%, #6E4A06 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0px 2px 4px rgba(95, 61, 5, 0.35));
+    }
+
+    .text-3d-gold {
+      background: linear-gradient(180deg, #FFFFFF 0%, #FFE596 25%, #D4AF37 55%, #85580C 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.45));
+    }
+
+    .text-gold-metallic {
+      background: linear-gradient(135deg, #FFF5C0 0%, #F1C40F 25%, #E6B800 50%, #B8860B 75%, #5F3D05 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+    }
+
+    /* Floating Lantern Keyframe Animation */
+    @keyframes sway {
+      0%, 100% { transform: rotate(-3deg); }
+      50% { transform: rotate(3deg); }
+    }
+
+    .lantern-sway {
+      animation: sway 4.5s ease-in-out infinite;
+      transform-origin: top center;
+    }
+
+    /* Glow Effect */
+    .gold-glow {
+      box-shadow: 0 0 25px rgba(212, 175, 55, 0.5);
+    }
+
+    .red-ribbon-shadow {
+      filter: drop-shadow(0 6px 12px rgba(122, 5, 5, 0.45));
+    }
+
+    /* COVER OVERLAY (HALAMAN 1 COVER DENGAN FOTO) */
+    #cover-overlay {
+      position: fixed;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 480px;
+      height: 100vh;
+      background: radial-gradient(circle at 50% 35%, #FFFDF5 0%, #F7E7C4 35%, #D4AF37 75%, #6E4A06 100%);
+      z-index: 999;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 20px;
+      text-align: center;
+      transition: opacity 0.8s ease, visibility 0.8s;
+      overflow-y: auto;
+    }
+
+    .btn-gold-3d {
+      background: linear-gradient(180deg, #FFD700 0%, #D4AF37 50%, #996515 100%);
+      color: #3D2200;
+      font-weight: 700;
+      border: 1px solid #FFE89C;
+      box-shadow: 0 6px 20px rgba(133, 88, 12, 0.4), inset 0 1px 2px rgba(255, 255, 255, 0.8);
+      transition: all 0.3s ease;
+    }
+
+    .btn-gold-3d:active {
+      transform: translateY(2px);
+      box-shadow: 0 2px 10px rgba(133, 88, 12, 0.4);
+    }
+
+    /* Floating Music Control Button */
+    .music-btn {
+      position: fixed;
+      bottom: 24px;
+      right: calc(50% - 220px);
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, #B80F0F, #7A0505);
+      color: #FFE596;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      z-index: 1001;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+      border: 2px solid #D4AF37;
+    }
+
+    @media (max-width: 480px) {
+      .music-btn { right: 20px; }
+    }
+
+    /* Frame Foto Emas Khas Tionghoa */
+    .photo-gold-frame {
+      position: relative;
+      background: #FFFFFF;
+      padding: 6px;
+      border: 3px solid #D4AF37;
+      box-shadow: 0 12px 30px rgba(95, 61, 5, 0.35);
+    }
+
+    .photo-gold-frame::before {
+      content: '';
+      position: absolute;
+      top: 3px; left: 3px; right: 3px; bottom: 3px;
+      border: 1px solid #85580C;
+      pointer-events: none;
+    }
+
+    /* Kartu Detail Acara bergaya Perkamen Emas */
+    .parchment-card {
+      background: linear-gradient(180deg, #FFFDF8 0%, #FAFAF2 100%);
+      border: 2px solid #D4AF37;
+      position: relative;
+      box-shadow: 0 10px 30px rgba(133, 88, 12, 0.25);
+    }
+
+    .parchment-card::after {
+      content: '';
+      position: absolute;
+      top: 4px; left: 4px; right: 4px; bottom: 4px;
+      border: 1px solid rgba(133, 88, 12, 0.3);
+      pointer-events: none;
+    }
+
+    /* Keyframe Pulse Glow */
+    @keyframes pulseGlow {
+      0%, 100% { opacity: 0.6; }
+      50% { opacity: 1; }
+    }
+
+    .bg-medallion-glow {
+      animation: pulseGlow 3.5s ease-in-out infinite;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- AUDIO BACKGROUND GUZHENG TRADISIONAL -->
+  <audio id="bg-music" loop preload="auto">
+    <source src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=guzheng-traditional-112347.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- FLOATING MUSIC CONTROL BUTTON -->
+  <div class="music-btn" onclick="toggleMusic()" title="Putar / Hentikan Musik">
+    <span id="music-icon" class="text-xl">🎵</span>
+  </div>
+
+  <!-- MAIN APP CONTAINER -->
+  <div class="app-container">
+
+    <!-- CANVAS ANIMASI GLITTER EMAS -->
+    <canvas id="glitter-canvas"></canvas>
+
+    <!-- ==================== HALAMAN 1: COVER OVERLAY (WITH PHOTO FRAME) ==================== -->
+    <div id="cover-overlay">
+      <!-- Background Medali Longevity 壽 -->
+      <div class="absolute inset-0 flex items-center justify-center opacity-15 pointer-events-none">
+        <svg class="w-80 h-80 text-oriental-red bg-medallion-glow" viewBox="0 0 100 100" fill="currentColor">
+          <circle cx="50" cy="50" r="46" stroke="currentColor" stroke-width="2" fill="none"/>
+          <path d="M50 10 A40 40 0 1 0 50 90 A40 40 0 1 0 50 10 Z M50 20 L50 80 M20 50 L80 50" stroke="currentColor" stroke-width="1.5"/>
+          <text x="50" y="60" font-family="'Noto Serif SC'" font-size="34" font-weight="900" text-anchor="middle" fill="currentColor">壽</text>
+        </svg>
+      </div>
+
+      <!-- Lampion Merah Kiri Atas -->
+      <div class="absolute top-0 left-3 w-16 h-36 lantern-sway z-10 pointer-events-none">
+        <svg viewBox="0 0 100 200" class="w-full h-full drop-shadow-lg">
+          <line x1="50" y1="0" x2="50" y2="30" stroke="#FFD700" stroke-width="2"/>
+          <rect x="35" y="30" width="30" height="8" rx="2" fill="#D4AF37"/>
+          <ellipse cx="50" cy="75" rx="36" ry="40" fill="url(#lanternGradCover)"/>
+          <text x="50" y="83" font-family="'Noto Serif SC'" font-size="22" font-weight="bold" fill="#FFD700" text-anchor="middle">壽</text>
+          <rect x="35" y="115" width="30" height="8" rx="2" fill="#D4AF37"/>
+          <path d="M40 123 L40 170 M50 123 L50 180 M60 123 L60 170" stroke="#FFD700" stroke-width="2.5"/>
+          <circle cx="50" cy="125" r="4" fill="#B80F0F"/>
+          <defs>
+            <radialGradient id="lanternGradCover" cx="40%" cy="40%" r="60%">
+              <stop offset="0%" stop-color="#FF4D4D"/>
+              <stop offset="70%" stop-color="#B80F0F"/>
+              <stop offset="100%" stop-color="#5E0000"/>
+            </radialGradient>
+          </defs>
+        </svg>
+      </div>
+
+           <!-- Lampion Merah Kanan Atas -->
+      <div class="absolute top-0 right-3 w-16 h-36 lantern-sway z-10 pointer-events-none">
+        <svg viewBox="0 0 100 200" class="w-full h-full drop-shadow-lg">
+          <line x1="50" y1="0" x2="50" y2="30" stroke="#FFD700" stroke-width="2"/>
+          <rect x="35" y="30" width="30" height="8" rx="2" fill="#D4AF37"/>
+          <ellipse cx="50" cy="75" rx="36" ry="40" fill="url(#lanternGradCover)"/>
+          <text x="50" y="83" font-family="'Noto Serif SC'" font-size="22" font-weight="bold" fill="#FFD700" text-anchor="middle">壽</text>
+          <rect x="35" y="115" width="30" height="8" rx="2" fill="#D4AF37"/>
+          <path d="M40 123 L40 170 M50 123 L50 180 M60 123 L60 170" stroke="#FFD700" stroke-width="2.5"/>
+          <circle cx="50" cy="125" r="4" fill="#B80F0F"/>
+          <defs>
+            <radialGradient id="lanternGradCover" cx="40%" cy="40%" r="60%">
+              <stop offset="0%" stop-color="#FF4D4D"/>
+              <stop offset="70%" stop-color="#B80F0F"/>
+              <stop offset="100%" stop-color="#5E0000"/>
+            </radialGradient>
+          </defs>
+        </svg>
+      </div>
+
+      <!-- Konten Sampul Depan -->
+      <div class="relative z-20 my-auto flex flex-col items-center w-full max-w-xs pt-12">
+        <p class="font-script text-3xl text-oriental-red">You are Invited to:</p>
+
+        <p class="font-oriental text-2xl font-black text-oriental-darkred mt-0.5 tracking-widest my-1">Alin Ko/Suk Alin</p>
+        
+        <!-- Angka 91 Emas Megah -->
+        <div class="relative my-1">
+          <h1 class="font-cinzel text-8xl font-extrabold text-oriental-red -my-3">91<span class="text-3xl align-top">st</span></h1>
+        </div>
+       
+        <!-- Badge Pita Merah -->
+        <div class="relative my-0 w-full">
+          <div class="bg-gradient-to-r from-oriental-darkred via-oriental-red to-oriental-darkred text-gold-200 py-1.5 px-4 rounded-full border border-gold-400 font-cinzel text-xs font-bold shadow-md tracking-wider uppercase flex items-center justify-center space-x-1.5">
+            <span>❖</span>
+            <span>Birthday Celebration</span>
+            <span>❖</span>
+          </div>
+        </div>
+
+        <!-- Tombol Buka Undangan -->
+        <button onclick="openInvitation()" class="btn-gold-3d w-full py-1.5 px-6 rounded-full font-cinzel text-sm tracking-wider uppercase flex items-center justify-center space-x-2 mt-4">
+          <span>🧧</span>
+          <span>Buka Undangan</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- ==================== HALAMAN 1 (ISI): HEADER HERO SECTION ==================== -->
+    <div class="relative pt-6 px-4 pb-2 text-center">
+      
+      <!-- LAMPION MERAH GANTUNG (KIRI ATAS) -->
+      <div class="absolute top-0 left-2 w-20 h-44 lantern-sway z-30 pointer-events-none">
+        <svg viewBox="0 0 100 200" class="w-full h-full drop-shadow-xl">
+          <line x1="50" y1="0" x2="50" y2="35" stroke="#FFD700" stroke-width="2.5"/>
+          <rect x="35" y="35" width="30" height="9" rx="2" fill="#D4AF37"/>
+          <ellipse cx="50" cy="85" rx="38" ry="42" fill="url(#lanternGradMain)"/>
+          <ellipse cx="50" cy="85" rx="20" ry="42" fill="none" stroke="#FF8080" stroke-width="1" opacity="0.4"/>
+          <text x="50" y="93" font-family="'Noto Serif SC'" font-size="24" font-weight="900" fill="#FFD700" text-anchor="middle" filter="drop-shadow(0 1px 2px rgba(0,0,0,0.5))">壽</text>
+          <rect x="35" y="127" width="30" height="9" rx="2" fill="#D4AF37"/>
+          <circle cx="50" cy="138" r="5" fill="#B80F0F" stroke="#D4AF37" stroke-width="1"/>
+          <path d="M42 142 L42 190 M50 142 L50 200 M58 142 L58 190" stroke="#FFD700" stroke-width="2.5"/>
+          <defs>
+            <radialGradient id="lanternGradMain" cx="40%" cy="35%" r="65%">
+              <stop offset="0%" stop-color="#FF3333"/>
+              <stop offset="60%" stop-color="#C40C0C"/>
+              <stop offset="100%" stop-color="#4A0000"/>
+            </radialGradient>
+          </defs>
+        </svg>
+      </div>
+
+      <!-- LAMPION MERAH GANTUNG (KANAN ATAS) -->
+      <div class="absolute top-0 right-2 w-20 h-44 lantern-sway z-30 pointer-events-none">
+        <svg viewBox="0 0 100 200" class="w-full h-full drop-shadow-xl">
+          <line x1="50" y1="0" x2="50" y2="35" stroke="#FFD700" stroke-width="2.5"/>
+          <rect x="35" y="35" width="30" height="9" rx="2" fill="#D4AF37"/>
+          <ellipse cx="50" cy="85" rx="38" ry="42" fill="url(#lanternGradMain)"/>
+          <ellipse cx="50" cy="85" rx="20" ry="42" fill="none" stroke="#FF8080" stroke-width="1" opacity="0.4"/>
+          <text x="50" y="93" font-family="'Noto Serif SC'" font-size="24" font-weight="900" fill="#FFD700" text-anchor="middle" filter="drop-shadow(0 1px 2px rgba(0,0,0,0.5))">壽</text>
+          <rect x="35" y="127" width="30" height="9" rx="2" fill="#D4AF37"/>
+          <circle cx="50" cy="138" r="5" fill="#B80F0F" stroke="#D4AF37" stroke-width="1"/>
+          <path d="M42 142 L42 190 M50 142 L50 200 M58 142 L58 190" stroke="#FFD700" stroke-width="2.5"/>
+          <defs>
+            <radialGradient id="lanternGradMain" cx="40%" cy="35%" r="65%">
+              <stop offset="0%" stop-color="#FF3333"/>
+              <stop offset="60%" stop-color="#C40C0C"/>
+              <stop offset="100%" stop-color="#4A0000"/>
+            </radialGradient>
+          </defs>
+        </svg>
+      </div>
+
+      <!-- MEDALI LONGEVITY LINGKARAN EMAS BACKGROUND -->
+      <div class="absolute top-8 left-1/2 transform -translate-x-1/2 w-80 h-80 opacity-25 pointer-events-none z-0">
+        <svg viewBox="0 0 200 200" class="w-full h-full text-gold-700" fill="currentColor">
+          <circle cx="100" cy="100" r="95" stroke="currentColor" stroke-width="3" fill="none" stroke-dasharray="8 4"/>
+          <circle cx="100" cy="100" r="85" stroke="currentColor" stroke-width="2" fill="none"/>
+          <circle cx="100" cy="100" r="75" stroke="currentColor" stroke-width="1" fill="none"/>
+          <path d="M30 160 Q 50 130 70 160 L 60 160 Q 75 140 90 160 Z" opacity="0.6"/>
+          <path d="M110 160 Q 130 125 150 160 L 140 160 Q 155 135 170 160 Z" opacity="0.6"/>
+          <text x="100" y="125" font-family="'Noto Serif SC'" font-size="75" font-weight="900" text-anchor="middle" fill="currentColor">壽</text>
+        </svg>
+      </div>
+
+      <!-- JUDUL UTAMA UNDANGAN -->
+      <div class="relative z-10 pt-10">
+        <p class="font-script text-6xl text-oriental-red drop-shadow-sm">Celebrating</p>
+
+        <!-- BANNER PITA MERAH -->
+        <div class="my-3 flex justify-center">
+          <div class="bg-gradient-to-r from-oriental-darkred via-oriental-crimson to-oriental-darkred text-gold-200 py-2 px-6 rounded-full border-2 border-gold-300 font-cinzel text-sm font-bold shadow-xl tracking-wider uppercase flex items-center space-x-2 red-ribbon-shadow">
+            <span class="text-l text-gold-300">❖</span>
+            <span class= "text-l">91 Wonderful Years</span>
+            <span class="text-l text-gold-300">❖</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- HERO PHOTO FRAME & FLORAL MOTIF -->
+      <div class="relative px-6 py-4 z-20">
+        
+        <!-- Bunga Peony Merah & Mei Hua Kiri -->
+        <div class="absolute -left-3 top-6 w-28 h-36 pointer-events-none z-30">
+          <svg viewBox="0 0 120 140" class="w-full h-full drop-shadow-lg">
+            <path d="M10 130 Q 40 70 95 25" stroke="#5F3D05" stroke-width="3.5" fill="none"/>
+            <path d="M40 70 Q 70 60 90 80" stroke="#5F3D05" stroke-width="2.5" fill="none"/>
+            <g transform="translate(45, 80)">
+              <circle cx="0" cy="0" r="22" fill="#B80F0F"/>
+              <circle cx="0" cy="0" r="16" fill="#D32F2F"/>
+              <circle cx="-4" cy="-4" r="10" fill="#FF4D4D"/>
+              <circle cx="0" cy="0" r="5" fill="#FFD700"/>
+            </g>
+            <g transform="translate(85, 30)">
+              <circle cx="0" cy="0" r="15" fill="#B80F0F"/>
+              <circle cx="0" cy="0" r="10" fill="#D32F2F"/>
+              <circle cx="0" cy="0" r="3" fill="#FFD700"/>
+            </g>
+            <path d="M30 95 Q 15 90 20 105 Q 35 105 30 95 Z" fill="#D4AF37"/>
+          </svg>
+        </div>
+
+        <!-- Bunga Peony Merah & Mei Hua Kanan -->
+        <div class="absolute -right-3 top-6 w-28 h-36 pointer-events-none z-30 transform scale-x-[-1]">
+          <svg viewBox="0 0 120 140" class="w-full h-full drop-shadow-lg">
+            <path d="M10 130 Q 40 70 95 25" stroke="#5F3D05" stroke-width="3.5" fill="none"/>
+            <path d="M40 70 Q 70 60 90 80" stroke="#5F3D05" stroke-width="2.5" fill="none"/>
+            <g transform="translate(45, 80)">
+              <circle cx="0" cy="0" r="22" fill="#B80F0F"/>
+              <circle cx="0" cy="0" r="16" fill="#D32F2F"/>
+              <circle cx="-4" cy="-4" r="10" fill="#FF4D4D"/>
+              <circle cx="0" cy="0" r="5" fill="#FFD700"/>
+            </g>
+            <g transform="translate(85, 30)">
+              <circle cx="0" cy="0" r="15" fill="#B80F0F"/>
+              <circle cx="0" cy="0" r="10" fill="#D32F2F"/>
+              <circle cx="0" cy="0" r="3" fill="#FFD700"/>
+            </g>
+            <path d="M30 95 Q 15 90 20 105 Q 35 105 30 95 Z" fill="#D4AF37"/>
+          </svg>
+        </div>
+
+        <!-- FRAME FOTO EMAS HALAMAN ISI -->
+        <div class="photo-gold-frame w-56 h-68 mx-auto rounded-lg overflow-hidden my-2">
+          <img src="https://lh3.googleusercontent.com/d/1yDU1awcRzScclz6IQ5Wyj7vxnPJOnE6J" 
+               onerror="this.onerror=null; this.src='https://placehold.co/400x500/FAF4E8/85580C?text=Foto+Alin+Ko';"
+               class="w-full h-full object-cover rounded shadow-inner">
+               
+          <div class="absolute top-1 left-1 w-5 h-5 border-t-2 border-l-2 border-gold-400 pointer-events-none"></div>
+          <div class="absolute top-1 right-1 w-5 h-5 border-t-2 border-r-2 border-gold-400 pointer-events-none"></div>
+          <div class="absolute bottom-1 left-1 w-5 h-5 border-b-2 border-l-2 border-gold-400 pointer-events-none"></div>
+          <div class="absolute bottom-1 right-1 w-5 h-5 border-b-2 border-r-2 border-gold-400 pointer-events-none"></div>
+        </div>
+
+        <!-- UNGKAPAN SYUKUR & DOA -->
+        <p class="text-center font-sans text-xl italic text-gold-800 max-w-xs mx-auto mt-4 leading-relaxed font-medium">
+          "Join us for an evening of love, gratitude, and celebration."
+        </p>
+      </div>
+
+    </div>
+
+    <!-- ORIENTAL DIVIDER -->
+    <div class="flex items-center justify-center space-x-2 my-2 opacity-80">
+      <div class="h-[1px] w-16 bg-gradient-to-r from-transparent to-gold-700"></div>
+      <div class="text-gold-700 text-xs">❖ 壽 ❖</div>
+      <div class="h-[1px] w-16 bg-gradient-to-l from-transparent to-gold-700"></div>
+    </div>
+
+    <!-- ==================== HALAMAN 2: EVENT DETAILS & COUNTDOWN ==================== -->
+    <div class="px-5 py-4 z-20 relative">
+      <div class="parchment-card rounded-xl p-5 text-center">
+        
+        <p class="font-cinzel text-xs text-gold-700 font-bold uppercase tracking-widest">Waktu & Tempat Acara</p>
+
+        <div class="my-3 py-2 border-y border-dashed border-gold-400/60">
+          <p class="font-sans font-bold text-lg text-oriental-red">Sabtu, 03 Oktober 2026</p>
+          <p class="font-sans font-semibold text-sm text-gold-800 mt-0.5">Pukul 18.00 WIB - Selesai</p>
+        </div>
+
+        <!-- Lokasi Sun City -->
+        <div class="mt-3">
+          <p class="font-oriental text-lg font-bold text-gold-800">Sun City Restaurant</p>
+          <p class="font-sans text-xs text-gray-700 mt-1 leading-relaxed px-2">
+            Jl. Hayam Wuruk No.127, RT.1/RW.6, Mangga Besar,<br> Kec. Taman Sari, Kota Jakarta Barat, DKI Jakarta 11180
+          </p>
+
+          <a href="https://www.google.com/maps/search/?api=1&query=Sun+City+Restaurant+Hayam+Wuruk+Jakarta+Barat" 
+             target="_blank" 
+             rel="noopener noreferrer"
+             class="btn-gold-3d inline-flex items-center space-x-2 py-2.5 px-6 rounded-full font-cinzel text-xs font-bold uppercase mt-4 shadow-md">
+            <span>📍</span>
+            <span>Petunjuk Lokasi Google Maps</span>
+          </a>
+        </div>
+
+        <!-- COUNTDOWN TIMER -->
+        <div class="mt-6 pt-4 border-t border-gold-300">
+          <p class="font-cinzel text-xs font-bold text-gold-800 uppercase tracking-wider mb-3">Hitung Mundur Acara:</p>
+          
+          <div class="grid grid-cols-4 gap-2 max-w-xs mx-auto">
+            <div class="bg-gradient-to-b from-amber-50 to-amber-100/80 border border-gold-400 p-2 rounded-lg shadow-sm">
+              <span id="cd-days" class="block font-cinzel text-xl font-bold text-oriental-darkred">00</span>
+              <span class="text-[10px] text-gray-600 uppercase font-semibold">Hari</span>
+            </div>
+            <div class="bg-gradient-to-b from-amber-50 to-amber-100/80 border border-gold-400 p-2 rounded-lg shadow-sm">
+              <span id="cd-hours" class="block font-cinzel text-xl font-bold text-oriental-darkred">00</span>
+              <span class="text-[10px] text-gray-600 uppercase font-semibold">Jam</span>
+            </div>
+            <div class="bg-gradient-to-b from-amber-50 to-amber-100/80 border border-gold-400 p-2 rounded-lg shadow-sm">
+              <span id="cd-mins" class="block font-cinzel text-xl font-bold text-oriental-darkred">00</span>
+              <span class="text-[10px] text-gray-600 uppercase font-semibold">Menit</span>
+            </div>
+            <div class="bg-gradient-to-b from-amber-50 to-amber-100/80 border border-gold-400 p-2 rounded-lg shadow-sm">
+              <span id="cd-secs" class="block font-cinzel text-xl font-bold text-oriental-darkred">00</span>
+              <span class="text-[10px] text-gray-600 uppercase font-semibold">Detik</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ORIENTAL DIVIDER -->
+    <div class="flex items-center justify-center space-x-2 my-1 opacity-80">
+      <div class="h-[1px] w-16 bg-gradient-to-r from-transparent to-gold-700"></div>
+      <div class="text-gold-700 text-xs">❖ 囍 ❖</div>
+      <div class="h-[1px] w-16 bg-gradient-to-l from-transparent to-gold-700"></div>
+    </div>
+
+    <!-- ==================== HALAMAN 3: CLOSING & SUMMARY ==================== -->
+    <div class="px-5 pt-2 pb-10 z-20 relative text-center">
+      
+      <!-- Frasa Sukacita Tionghoa -->
+      <div class="font-oriental text-2xl font-black text-oriental-darkred tracking-[4px] my-2">
+        欢聚一堂 共享喜悦
+      </div>
+      <p class="font-sans text-xs italic text-gold-800 mb-4">
+        "Berkumpul Bersama dalam Sukacita dan Kebahagiaan"
+      </p>
+  <!-- ==================== JAVASCRIPT LOGIC ==================== -->
+  <script>
+    // 1. DYNAMIC GUEST NAME FROM URL PARAMETER (?to=Nama+Tamu)
+    document.addEventListener("DOMContentLoaded", function() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const guestParam = urlParams.get('to');
+      if (guestParam) {
+        const formattedName = decodeURIComponent(guestParam.replace(/\+/g, ' '));
+        const guestElement = document.getElementById('guest-name');
+        if (guestElement) guestElement.innerText = formattedName;
+      }
+    });
+
+    // 2. OPEN INVITATION & AUTOPLAY AUDIO
+    let isPlaying = false;
+    const audio = document.getElementById('bg-music');
+    const musicIcon = document.getElementById('music-icon');
+
+    function playMusicSeamless() {
+      if (audio) {
+        audio.play().then(() => {
+          isPlaying = true;
+          if (musicIcon) musicIcon.innerText = '🎵';
+          removeGestureListeners();
+        }).catch(err => {
+          console.log("Autoplay waiting for initial user interaction:", err);
+        });
+      }
+    }
+
+    function openInvitation() {
+      const cover = document.getElementById('cover-overlay');
+      if (cover) {
+        cover.style.opacity = '0';
+        cover.style.visibility = 'hidden';
+      }
+
+      playMusicSeamless();
+      setTimeout(resizeCanvas, 100);
+    }
+
+    function toggleMusic() {
+      if (isPlaying) {
+        audio.pause();
+        if (musicIcon) musicIcon.innerText = '🔇';
+        isPlaying = false;
+      } else {
+        playMusicSeamless();
+      }
+    }
+
+    // Fallback gesture listeners so music plays smoothly on touch/scroll if blocked by browser
+    function onUserGesture() {
+      if (!isPlaying) {
+        playMusicSeamless();
+      }
+    }
+
+    function removeGestureListeners() {
+      window.removeEventListener('touchstart', onUserGesture);
+      window.removeEventListener('scroll', onUserGesture);
+      window.removeEventListener('click', onUserGesture);
+    }
+
+    window.addEventListener('touchstart', onUserGesture, { passive: true });
+    window.addEventListener('scroll', onUserGesture, { passive: true });
+    window.addEventListener('click', onUserGesture, { passive: true });
+
+    // 3. COUNTDOWN TIMER (03 Oktober 2026, 17:00 WIB)
+    const targetDate = new Date("October 3, 2026 17:00:00 GMT+0700").getTime();
+
+    const countdownInterval = setInterval(function() {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+
+      if (distance < 0) {
+        clearInterval(countdownInterval);
+        document.getElementById("cd-days").innerText = "00";
+        document.getElementById("cd-hours").innerText = "00";
+        document.getElementById("cd-mins").innerText = "00";
+        document.getElementById("cd-secs").innerText = "00";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      const daysEl = document.getElementById("cd-days");
+      const hoursEl = document.getElementById("cd-hours");
+      const minsEl = document.getElementById("cd-mins");
+      const secsEl = document.getElementById("cd-secs");
+
+      if (daysEl) daysEl.innerText = days < 10 ? '0' + days : days;
+      if (hoursEl) hoursEl.innerText = hours < 10 ? '0' + hours : hours;
+      if (minsEl) minsEl.innerText = minutes < 10 ? '0' + minutes : minutes;
+      if (secsEl) secsEl.innerText = seconds < 10 ? '0' + seconds : seconds;
+    }, 1000);
+
+    // 4. ANIMASI CANVAS GLITTER EMAS (TWINKLE SPARKLE)
+    const canvas = document.getElementById('glitter-canvas');
+    const ctx = canvas ? canvas.getContext('2d') : null;
+
+    function resizeCanvas() {
+      if (!canvas) return;
+      const parent = canvas.parentElement;
+      canvas.width = parent.clientWidth;
+      canvas.height = Math.max(parent.clientHeight, parent.scrollHeight);
+    }
+    
+    if (canvas) {
+      resizeCanvas();
+      window.addEventListener('resize', resizeCanvas);
+    }
+
+    const glitterParticles = [];
+    const glitterCount = 50;
+
+    const goldColors = [
+      'rgba(255, 215, 0, ',    /* Bright Gold */
+      'rgba(241, 196, 15, ',   /* Sun Gold */
+      'rgba(255, 232, 156, ',  /* Light Warm Gold */
+      'rgba(212, 175, 55, '    /* Metallic Gold */
+    ];
+
+    if (canvas) {
+      for (let i = 0; i < glitterCount; i++) {
+        glitterParticles.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          size: Math.random() * 2.2 + 0.8,
+          colorPrefix: goldColors[Math.floor(Math.random() * goldColors.length)],
+          alpha: Math.random(),
+          alphaSpeed: 0.012 + Math.random() * 0.02,
+          increasing: Math.random() > 0.5,
+          speedY: -(Math.random() * 0.35 + 0.1),
+          speedX: (Math.random() - 0.5) * 0.25,
+          isSparkle: Math.random() > 0.6
+        });
+      }
+    }
+
+    function drawSparkle(x, y, size, color) {
+      if (!ctx) return;
+      ctx.save();
+      ctx.beginPath();
+      ctx.fillStyle = color;
+      ctx.moveTo(x, y - size * 2.8);
+      ctx.quadraticCurveTo(x, y, x + size * 2.8, y);
+      ctx.quadraticCurveTo(x, y, x, y + size * 2.8);
+      ctx.quadraticCurveTo(x, y, x - size * 2.8, y);
+      ctx.quadraticCurveTo(x, y, x, y - size * 2.8);
+      ctx.fill();
+      ctx.restore();
+    }
+
+    function animateGlitter() {
+      if (!canvas || !ctx) return;
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      glitterParticles.forEach(p => {
+        p.y += p.speedY;
+        p.x += p.speedX;
+
+        if (p.y < -10) {
+          p.y = canvas.height + 10;
+          p.x = Math.random() * canvas.width;
+        }
+        if (p.x < 0) p.x = canvas.width;
+        if (p.x > canvas.width) p.x = 0;
+
+        if (p.increasing) {
+          p.alpha += p.alphaSpeed;
+          if (p.alpha >= 0.9) p.increasing = false;
+        } else {
+          p.alpha -= p.alphaSpeed;
+          if (p.alpha <= 0.1) p.increasing = true;
+        }
+
+        const color = p.colorPrefix + p.alpha + ')';
+
+        if (p.isSparkle) {
+          drawSparkle(p.x, p.y, p.size, color);
+        } else {
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+          ctx.fillStyle = color;
+          ctx.fill();
+        }
+      });
+
+      requestAnimationFrame(animateGlitter);
+    }
+
+    if (canvas) {
+      animateGlitter();
+    }
+  </script>
+</body>
+</html>
